@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!-- Version 8 MySQL hiberante-cfg.xml example for Hibernate 5 -->
+<hibernate-configuration>
+    <session-factory>
+        <!-- connection database-->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/belajarhibernate</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <!-- show generate sql-->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- set default not auto commit.. transaksi manual-->
+        <property name="hibernate.connection.autocommit">false</property>
+
+        <!-- how hibernate translate from java to db-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- DB schema will be updated if needed, akan generate object ke table, column pada DB-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- connection pooling-->
+        <property name="hibernate.connection.pool_size">10</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">1800</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+
+        <!-- add class entity for registry to hibernate-->
+        <mapping class="com.tutorial.entity.EntityExample"/>
+
+    </session-factory>
+</hibernate-configuration>
