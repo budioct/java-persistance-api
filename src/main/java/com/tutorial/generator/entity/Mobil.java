@@ -1,4 +1,4 @@
-package com.tutorial.Generator.entity;
+package com.tutorial.generator.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

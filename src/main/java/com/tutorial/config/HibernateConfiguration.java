@@ -1,6 +1,7 @@
 package com.tutorial.config;
 
-import com.tutorial.Generator.entity.Mobil;
+import com.tutorial.generator.entity.Barang;
+import com.tutorial.generator.entity.Mobil;
 import com.tutorial.constraint.entity.Mandor;
 import com.tutorial.constraint.entity.Siswa;
 import com.tutorial.simple.master.Mahasiswa;
@@ -35,7 +36,8 @@ public class HibernateConfiguration {
                     .addAnnotatedClass(Mahasiswa.class)
                     .addAnnotatedClass(Siswa.class)
                     .addAnnotatedClass(Mandor.class)
-                    .addAnnotatedClass(Mobil.class);
+                    .addAnnotatedClass(Mobil.class)
+                    .addAnnotatedClass(Barang.class);
 
             // Metadata buildMetadata() // menentukan mapping antara class dan table baik menggunakan XML atau annotation dalam kode
             // SessionFactory buildSessionFactory() // bertangung jawab atas pembuatan object Session

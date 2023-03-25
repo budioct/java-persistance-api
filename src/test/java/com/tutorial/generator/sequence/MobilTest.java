@@ -1,9 +1,8 @@
-package com.tutorial.sequence;
+package com.tutorial.generator.uuid.sequence;
 
-import com.tutorial.Generator.dao.MobilDao;
-import com.tutorial.Generator.entity.Mobil;
+import com.tutorial.generator.dao.MobilDao;
+import com.tutorial.generator.entity.Mobil;
 import com.tutorial.config.HibernateConfiguration;
-import com.tutorial.simple.dao.MahasiswaDao;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.jupiter.api.*;
@@ -22,8 +21,8 @@ public class MobilTest {
     @BeforeEach
     void setUp(){
         log.info("Memulai Object Mobil");
-        this.session = HibernateConfiguration.getSession();
-        this.mobilDao  = new MobilDao(session);
+        this.session = HibernateConfiguration.getSession(); // koneksi ke DBMS lewat ORM
+        this.mobilDao  = new MobilDao(session); // masukan Session ke mobil DAO
     }
 
     @AfterEach
@@ -44,7 +43,7 @@ public class MobilTest {
 
     @Test
     void testSaveMobil(){
-
+        // init barang // id akan generate otomatis dengan Number
         Mobil mobil = Mobil.builder()
                 .name("avanza")
                 .merk("toyota")
@@ -53,16 +52,17 @@ public class MobilTest {
                 .createdDateTime(LocalDateTime.now())
                 .build();
 
-        this.session.beginTransaction();
+        this.session.beginTransaction(); // Transaction beginTransaction() // memulai session mencakup beberapa transaksis gagasan session, antara entity dan datastore
 
-        mobil = this.mobilDao.save(mobil);
+        mobil = this.mobilDao.save(mobil); // Mobil save(Mobil value)
 
-        log.info("Save Mobil: {}", mobil);
+        log.info("Save Mobil: {}", mobil); // void commit() // eksekusi session
 
         this.session.getTransaction().commit();
 
         /**
          * result dari Generator Sequence, yang di lakukan oleh hibernate
+         * nanti dia akan membuat @SequenceGenerator (sequenceName = "seq_kelas") akan di buatkan table sebagai counter auto increment di table
          * 08:41:17.452 [main] DEBUG org.hibernate.internal.util.EntityPrinter - com.tutorial.Generator.entity.Mobil{lastUpdatedBy=null, createBy=admin, merk=toyota, name=avanza, createdDateTime=2023-03-25T08:41:17.362347700, id=3, type=sedan, lastUpdateBy=null}
          * 08:41:17.400 [main] DEBUG org.hibernate.SQL -
          *     select
