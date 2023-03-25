@@ -1,4 +1,4 @@
-package com.tutorial.crud.mahasiswa;
+package com.tutorial.implementationCrudJavaPersistanceHibernate;
 
 import com.tutorial.config.HibernateConfiguration;
 import com.tutorial.simple.dao.MahasiswaDao;

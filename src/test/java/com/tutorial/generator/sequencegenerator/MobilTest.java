@@ -1,4 +1,4 @@
-package com.tutorial.generator.uuid.sequence;
+package com.tutorial.generator.genericgenerator.sequence;
 
 import com.tutorial.generator.dao.MobilDao;
 import com.tutorial.generator.entity.Mobil;

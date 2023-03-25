@@ -19,7 +19,7 @@ public class MappingIdClass {
     @Id
     @Column(name = "tahun_angkatan", length = 4, columnDefinition = "int check(tahun_angkatan >= 1990)")
     private Integer year;
-    
+
     @Column(name = "class_id", length = 50)
     private String classId;
 

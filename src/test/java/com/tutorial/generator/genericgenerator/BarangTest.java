@@ -1,9 +1,8 @@
-package com.tutorial.generator.uuid;
+package com.tutorial.generator.genericgenerator;
 
 import com.tutorial.config.HibernateConfiguration;
 import com.tutorial.generator.dao.BarangDao;
 import com.tutorial.generator.entity.Barang;
-import com.tutorial.simple.dao.MahasiswaDao;
 import org.hibernate.Session;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,7 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class BarangTest {
 

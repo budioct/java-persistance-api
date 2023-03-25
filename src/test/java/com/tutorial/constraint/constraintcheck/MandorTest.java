@@ -1,10 +1,9 @@
-package com.tutorial.constraint.mandorCheck;
+package com.tutorial.constraint.constraintcheck;
 
 import com.tutorial.config.HibernateConfiguration;
 
 import com.tutorial.constraint.dao.MandorDao;
 import com.tutorial.constraint.entity.Mandor;
-import com.tutorial.constraint.entity.Siswa;
 import org.hibernate.Session;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,4 +1,4 @@
-package com.tutorial.constraint.siswaunique;
+package com.tutorial.constraint.constraintunique;
 
 import com.tutorial.config.HibernateConfiguration;
 import com.tutorial.constraint.dao.SiswaDao;

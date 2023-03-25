@@ -6,6 +6,7 @@ import com.tutorial.generator.entity.Barang;
 import com.tutorial.generator.entity.Mobil;
 import com.tutorial.constraint.entity.Mandor;
 import com.tutorial.constraint.entity.Siswa;
+import com.tutorial.mapping.enummapping.entity.EmployeeEnumOrdinal;
 import com.tutorial.simple.master.Mahasiswa;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -41,7 +42,8 @@ public class HibernateConfiguration {
                     .addAnnotatedClass(Mobil.class)
                     .addAnnotatedClass(Barang.class)
                     .addAnnotatedClass(OrangTua.class)
-                    .addAnnotatedClass(MappingIdClass.class);
+                    .addAnnotatedClass(MappingIdClass.class)
+                    .addAnnotatedClass(EmployeeEnumOrdinal.class);
 
             // Metadata buildMetadata() // menentukan mapping antara class dan table baik menggunakan XML atau annotation dalam kode
             // SessionFactory buildSessionFactory() // bertangung jawab atas pembuatan object Session
