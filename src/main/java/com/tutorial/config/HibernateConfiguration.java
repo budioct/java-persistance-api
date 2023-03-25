@@ -7,6 +7,7 @@ import com.tutorial.generator.entity.Mobil;
 import com.tutorial.constraint.entity.Mandor;
 import com.tutorial.constraint.entity.Siswa;
 import com.tutorial.mapping.embbeded.entity.MahasiswaEmbedded;
+import com.tutorial.mapping.embbeded.entity.MahasiswaEmbeddedOverrideAttributes;
 import com.tutorial.mapping.enumeration.entity.EmployeeEnumOrdinal;
 import com.tutorial.simple.master.Mahasiswa;
 import org.hibernate.HibernateException;
@@ -45,7 +46,8 @@ public class HibernateConfiguration {
                     .addAnnotatedClass(OrangTua.class)
                     .addAnnotatedClass(MappingIdClass.class)
                     .addAnnotatedClass(EmployeeEnumOrdinal.class)
-                    .addAnnotatedClass(MahasiswaEmbedded.class);
+                    .addAnnotatedClass(MahasiswaEmbedded.class)
+                    .addAnnotatedClass(MahasiswaEmbeddedOverrideAttributes.class);
 
             // Metadata buildMetadata() // menentukan mapping antara class dan table baik menggunakan XML atau annotation dalam kode
             // SessionFactory buildSessionFactory() // bertangung jawab atas pembuatan object Session
