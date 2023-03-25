@@ -1,6 +1,6 @@
-package com.tutorial.mapping.enummapping.dao;
+package com.tutorial.mapping.enumeration.dao;
 
-import com.tutorial.mapping.enummapping.entity.EmployeeEnumOrdinal;
+import com.tutorial.mapping.enumeration.entity.EmployeeEnumOrdinal;
 import com.tutorial.repository.CrudRepository;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

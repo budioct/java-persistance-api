@@ -1,9 +1,9 @@
-package com.tutorial.mapping.enummapping;
+package com.tutorial.mapping.enumeration;
 
 import com.tutorial.config.HibernateConfiguration;
-import com.tutorial.mapping.enummapping.dao.EmployeeEnumOrdinalDao;
-import com.tutorial.mapping.enummapping.entity.EmployeeEnumOrdinal;
-import com.tutorial.mapping.enummapping.entity.EmployeeStatus;
+import com.tutorial.mapping.enumeration.dao.EmployeeEnumOrdinalDao;
+import com.tutorial.mapping.enumeration.entity.EmployeeEnumOrdinal;
+import com.tutorial.mapping.enumeration.entity.EmployeeStatus;
 import org.hibernate.Session;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

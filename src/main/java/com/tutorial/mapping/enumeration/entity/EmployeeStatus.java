@@ -1,4 +1,4 @@
-package com.tutorial.mapping.enummapping.entity;
+package com.tutorial.mapping.enumeration.entity;
 
 public enum EmployeeStatus {
 

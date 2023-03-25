@@ -1,4 +1,4 @@
-package com.tutorial.mapping.enummapping.entity;
+package com.tutorial.mapping.enumeration.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -39,8 +39,6 @@ public class EmployeeEnumOrdinal {
     // STRING -> disimpan sesuai dengan nama nilai enum (Abjad A-Z), di class enum
     @Column(name = "employee_status")
     private EmployeeStatus status;
-
-
 
 
 }
