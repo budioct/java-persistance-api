@@ -9,6 +9,8 @@ import com.tutorial.constraint.entity.Siswa;
 import com.tutorial.mapping.embbeded.entity.MahasiswaEmbedded;
 import com.tutorial.mapping.embbeded.entity.MahasiswaEmbeddedOverrideAttributes;
 import com.tutorial.mapping.enumeration.entity.EmployeeEnumOrdinal;
+import com.tutorial.mapping.onetomany.entity.AlamatOneToMany;
+import com.tutorial.mapping.onetomany.entity.MahasiswaOneToMany;
 import com.tutorial.mapping.onetoone.entity.AlamatOneToOne;
 import com.tutorial.mapping.onetoone.entity.MahasiswaOneToOne;
 import com.tutorial.simple.master.Mahasiswa;
@@ -51,7 +53,9 @@ public class HibernateConfiguration {
                     .addAnnotatedClass(MahasiswaEmbedded.class)
                     .addAnnotatedClass(MahasiswaEmbeddedOverrideAttributes.class)
                     .addAnnotatedClass(AlamatOneToOne.class)
-                    .addAnnotatedClass(MahasiswaOneToOne.class);
+                    .addAnnotatedClass(MahasiswaOneToOne.class)
+                    .addAnnotatedClass(AlamatOneToMany.class)
+                    .addAnnotatedClass(MahasiswaOneToMany.class);
 
             // Metadata buildMetadata() // menentukan mapping antara class dan table baik menggunakan XML atau annotation dalam kode
             // SessionFactory buildSessionFactory() // bertangung jawab atas pembuatan object Session
