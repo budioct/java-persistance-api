@@ -27,13 +27,13 @@ public class SelectStatementHQLDao implements ReadRepository<Mahasiswa, Long> {
          * dua parameter: "from ObjectEntityReference where id = ?1 and nama = ?2"
          */
 
-        String hql = "from  com.tutorial.simple.master.Mahasiswa where id = ?1 "; // kita tidak perlu tulis SQL sunguhan.. tinggal ambil referensi dari object entity
-        try{
+        String hql = "from com.tutorial.simple.master.Mahasiswa where id = ?1 "; // kita tidak perlu tulis SQL sunguhan.. tinggal ambil referensi dari object entity
+        try {
             Query<Mahasiswa> query = this.session.createQuery(hql, Mahasiswa.class); // <T> org.hibernate.query.Query<T> createQuery(String var1, Class<T> var2) // return generic Query<T>
             query.setParameter(1, value); // Query<R> setParameter(int var1, Object var2) // binding parameter query dengan parameter
             Mahasiswa result = query.getSingleResult(); // R getSingleResult() // query akan return Type return Object
             return result != null ? Optional.of(result) : Optional.empty(); // ternary operator
-        }catch (NoResultException e){
+        } catch (NoResultException e) {
             return Optional.empty();
         }
 
@@ -47,9 +47,34 @@ public class SelectStatementHQLDao implements ReadRepository<Mahasiswa, Long> {
          * kita akan get semua data dengan HQL
          */
 
-        String hql = "from  com.tutorial.simple.master.Mahasiswa  "; // kita tidak perlu tulis SQL sunguhan.. tinggal ambil referensi dari object entity
+        String hql = "from  com.tutorial.simple.master.Mahasiswa"; // kita tidak perlu tulis SQL sunguhan.. tinggal ambil referensi dari object entity
         Query<Mahasiswa> query = this.session.createQuery(hql, Mahasiswa.class); // <T> org.hibernate.query.Query<T> createQuery(String var1, Class<T> var2) // return generic Query<T>
         return query.getResultList(); // List<R> getResultList()
     }
+
+    public Optional<Mahasiswa> findByNim(String nim) {
+        try {
+            String hql = "from Mahasiswa where nim = :nimMahasiswa";
+            Query<Mahasiswa> query = this.session.createQuery(hql, Mahasiswa.class)
+                    .setParameter("nimMahasiswa", nim);
+            Mahasiswa data = query.getSingleResult();
+            return data != null ? Optional.of(data) : Optional.empty();
+        } catch (NoResultException e) {
+            return Optional.empty();
+        }
+    }
+
+    public List<Mahasiswa> findByNamaOrTahunMasuk(String nama, Integer tahun) {
+
+        String hql = "from Mahasiswa where nama = :namaMahasiswa or thnMasuk = :tahunMasuk";
+        Query<Mahasiswa> query = this.session.createQuery(hql, Mahasiswa.class)
+                .setParameter("namaMahasiswa", nama)
+                .setParameter("tahunMasuk", tahun);
+        return query.getResultList();
+
+        //Mahasiswa data = query.getSingleResult();
+        //return data != null ? Optional.of(data) : Optional.empty();
+    }
+
 
 }
