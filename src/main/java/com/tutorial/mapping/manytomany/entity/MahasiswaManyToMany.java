@@ -43,7 +43,7 @@ public class MahasiswaManyToMany {
             foreignKey = @ForeignKey(name = "fk_mahasiswa_kuliah_mahasiswa_id"),
             inverseForeignKey = @ForeignKey(name = "fk_mahasiswa_kuliah_matakuliah_id")
     )
-    // jika kita tidak Exlude makan akan kena Error memory heap , karena circular dependency, sama sama di panggil terus sama hibernate karena object yang berelasi 
+    // jika kita tidak Exlude makan akan kena Error memory heap , karena circular dependency, sama sama di panggil terus sama hibernate karena object yang berelasi
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @FieldNameConstants.Exclude
