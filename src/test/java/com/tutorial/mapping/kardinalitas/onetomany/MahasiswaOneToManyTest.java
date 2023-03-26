@@ -1,4 +1,4 @@
-package com.tutorial.mapping.kardinalitasonetomany;
+package com.tutorial.mapping.kardinalitas.onetomany;
 
 import com.tutorial.config.HibernateConfiguration;
 import com.tutorial.mapping.onetomany.dao.AlamatOneToManyDao;

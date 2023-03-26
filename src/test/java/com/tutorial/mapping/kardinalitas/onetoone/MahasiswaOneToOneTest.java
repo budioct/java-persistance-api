@@ -1,4 +1,4 @@
-package com.tutorial.mapping.kardinalitasonetoone;
+package com.tutorial.mapping.kardinalitas.onetoone;
 
 import com.tutorial.config.HibernateConfiguration;
 import com.tutorial.mapping.onetoone.dao.AlamatOneToOneDao;
