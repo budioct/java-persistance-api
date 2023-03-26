@@ -1,7 +1,6 @@
 package com.tutorial.mapping.kardinalitasonetoone;
 
 import com.tutorial.config.HibernateConfiguration;
-import com.tutorial.mapping.enumeration.dao.EmployeeEnumOrdinalDao;
 import com.tutorial.mapping.onetoone.dao.AlamatOneToOneDao;
 import com.tutorial.mapping.onetoone.dao.MahasiswaOneToOneDao;
 import com.tutorial.mapping.onetoone.entity.AlamatOneToOne;

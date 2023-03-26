@@ -5,9 +5,6 @@ import com.tutorial.mapping.onetomany.dao.AlamatOneToManyDao;
 import com.tutorial.mapping.onetomany.dao.MahasiswaOneToManyDao;
 import com.tutorial.mapping.onetomany.entity.AlamatOneToMany;
 import com.tutorial.mapping.onetomany.entity.MahasiswaOneToMany;
-import com.tutorial.mapping.onetoone.dao.AlamatOneToOneDao;
-import com.tutorial.mapping.onetoone.dao.MahasiswaOneToOneDao;
-import lombok.val;
 import org.hibernate.Session;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -115,7 +112,6 @@ public class MahasiswaOneToManyTest {
                 .listAlamat(List.of(alamat1, alamat2, alamat3))
                 .build();
         kamal = this.mahasiswaDao.save(kamal);
-        this.session.getTransaction().commit();
 
         Optional<MahasiswaOneToMany> optional = this.mahasiswaDao.findById(kamal.getId()); // Optional<MahasiswaOneToMany> findById(String value)
         Assertions.assertTrue(optional.isPresent(), "mahasiswa tidak ada");
@@ -125,6 +121,8 @@ public class MahasiswaOneToManyTest {
 
         int size = simpanMahasiswa.getListAlamat().size(); // int size() // implementasi dari collection List<T> mendapatkan ukuran data
         Assertions.assertEquals(3, size); // void assertEquals(int expected, int actual)
+
+        this.session.getTransaction().commit();
 
         log.info("Alamat 1 = {}", alamat1);
         log.info("Alamat 2 = {}", alamat2);

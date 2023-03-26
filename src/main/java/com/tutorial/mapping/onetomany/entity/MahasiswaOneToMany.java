@@ -1,9 +1,7 @@
 package com.tutorial.mapping.onetomany.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.FieldNameConstants;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -50,6 +48,9 @@ public class MahasiswaOneToMany {
     // inverseJoinColumns = @JoinColumn // membuat column di table sebrang nyaa dengan modifikasi sendiri. untuk object Collection<AlamatOneToMany>
     // foreignKey = @ForeignKey // kita bisa modifikasi foreign key. untuk object MahasiswaOneToMany
     // inverseForeignKey = @ForeignKey // kita bisa modifikasi foreign key. untuk object Collection<AlamatOneToMany>
+    //@ToString.Exclude // supaya tidak error ketika ingin menampilkan method void toString()
+    //@EqualsAndHashCode.Exclude // supaya tidak error ketika ingin menampilkan method void toString()
+    //@FieldNameConstants.Exclude // supaya tidak error ketika ingin menampilkan method void toString()
     private List<AlamatOneToMany> listAlamat = new ArrayList<>();
 
 }
