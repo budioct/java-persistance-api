@@ -48,15 +48,5 @@ public class JoinEntityStatementDao {
         return data;
     }
 
-    public List<AlamatOneToOne> findByNameMahasiswa(String nama){
-
-        //language=HQL
-        String hql = "select alamat from AlamatOneToOne alamat left join MahasiswaOneToOne mhs on (alamat.id = mhs.alamat.id) where mhs.nama = :namaMahasiswa";
-        Query<AlamatOneToOne> mahasiswa = this.session.createQuery(hql, AlamatOneToOne.class).setParameter("namaMahasiswa", nama);
-        List<AlamatOneToOne> data = mahasiswa.getResultList();
-        return data;
-    }
-
-
 
 }
