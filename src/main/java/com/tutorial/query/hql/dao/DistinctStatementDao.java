@@ -10,6 +10,11 @@ import java.util.List;
 
 public class DistinctStatementDao {
 
+    /**
+     * Hibernate org.hibernate.Session memanfaatkan interface org.hibernate.Query untuk JPA (Java Persistance API)
+     * untuk bisa menggunakan interface EntityManager // javax.persistence.Query
+     */
+
     private EntityManager entityManager;
 
     private Session session;

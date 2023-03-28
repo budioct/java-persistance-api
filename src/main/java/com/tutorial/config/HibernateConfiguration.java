@@ -2,6 +2,7 @@ package com.tutorial.config;
 
 import com.tutorial.compositeprimarykey.IdClass.entity.MappingIdClass;
 import com.tutorial.compositeprimarykey.embeddedid.entity.OrangTua;
+import com.tutorial.query.mapping.onetomany.entity.Employee;
 import com.tutorial.generator.entity.Barang;
 import com.tutorial.generator.entity.Mobil;
 import com.tutorial.constraint.entity.Mandor;
@@ -17,6 +18,7 @@ import com.tutorial.mapping.onetomany.entity.AlamatOneToMany;
 import com.tutorial.mapping.onetomany.entity.MahasiswaOneToMany;
 import com.tutorial.mapping.onetoone.entity.AlamatOneToOne;
 import com.tutorial.mapping.onetoone.entity.MahasiswaOneToOne;
+import com.tutorial.query.mapping.onetomany.entity.Manager;
 import com.tutorial.simple.master.Mahasiswa;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -63,7 +65,9 @@ public class HibernateConfiguration {
                     .addAnnotatedClass(KelasManyToOne.class)
                     .addAnnotatedClass(MahasiswaManyToOne.class)
                     .addAnnotatedClass(MataKuliahManyToMany.class)
-                    .addAnnotatedClass(MahasiswaManyToMany.class);
+                    .addAnnotatedClass(MahasiswaManyToMany.class)
+                    .addAnnotatedClass(Employee.class)
+                    .addAnnotatedClass(Manager.class);
 
             // Metadata buildMetadata() // menentukan mapping antara class dan table baik menggunakan XML atau annotation dalam kode
             // SessionFactory buildSessionFactory() // bertangung jawab atas pembuatan object Session
